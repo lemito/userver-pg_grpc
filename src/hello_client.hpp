@@ -19,7 +19,6 @@ class HelloClient final : public userver::components::LoggableComponentBase {
             component_context
                 .FindComponent<userver::ugrpc::client::ClientFactoryComponent>()
                 .GetFactory()),
-        // The client needs a fixed endpoint
         client_(client_factory_.MakeClient<handlers::api::HelloServiceClient>(
             "hello-client", config["endpoint"].As<std::string>())) {}
 

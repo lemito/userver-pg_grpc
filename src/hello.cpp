@@ -8,8 +8,7 @@
 
 namespace pg_grpc_service_template {
 
-void Hello::SayHello(handlers::api::HelloServiceBase::SayHelloCall& call,
-                     handlers::api::HelloRequest&& request) {
+void Hello::SayHello(handlers::api::HelloServiceBase::SayHelloCall& call, handlers::api::HelloRequest&& request) {
   auto name = request.name();
 
   auto user_type = UserType::kFirstTime;
